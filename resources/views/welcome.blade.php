@@ -1,9 +1,3 @@
-{{--
-    Nom : Julien THÊME
-    Année : 2022
-    Mail : julientheme@gmail.com 
---}}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,22 +8,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
 
-    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('css/style.css')}}">
     <title>Portfolio</title>
 </head>
 <body>
-    {{-- <div id="onload-div" class="is-unactive">
+    <div id="onload-div" class="is-active">
         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
         <p>Page loading</p>
-    </div> --}}
-    <div id="accueil-div" class="is-unactive">
+    </div>
+
+    {{-- It's for add new project --}}
+    {{-- <div id="accueil-div" class="is-unactive">
         <h1>Portfolio</h1>
         <div>
-            {{-- <button id="add-project">Ajouter un projet</button> --}}
             <button id="view-project">Voir les projets</button>
             <a class="button-div" href="project">Ajouter un projet</a>
         </div>
-    </div>
+    </div> --}}
 
     <div id="three-div" class="is-unactive">
         <a-scene vr-mode-ui="enabled: false">
@@ -40,67 +35,63 @@
                 </a-asset-item>
                 <a-asset-item
                     id="torii-glb"
-                    src="{{asset('model/simpleTorii.glb')}}"
+                    src="{{secure_asset('model/simpleTorii.glb')}}"
                 ></a-asset-item>
                 <a-asset-item
                     id="grass3-glb"
-                    src="{{asset('model/grass3.glb')}}"
+                    src="{{secure_asset('model/grass3.glb')}}"
                 ></a-asset-item>
                 <a-asset-item
                     id="stone1-glb"
-                    src="{{asset('model/stone1.glb')}}"
+                    src="{{secure_asset('model/stone1.glb')}}"
                 ></a-asset-item>
                 <a-asset-item
                     id="tree1-glb"
-                    src="{{asset('model/tree1.glb')}}"
+                    src="{{secure_asset('model/tree1.glb')}}"
                 ></a-asset-item>
                 <a-asset-item
                     id="tree2-glb"
-                    src="{{asset('model/tree2.glb')}}"
+                    src="{{secure_asset('model/tree2.glb')}}"
                 ></a-asset-item>
-                {{-- <a-image
-                    id="img1"
-                    src="{{asset('img/minesweeper.png')}}"
-                ></a-image> --}}
                 <a-asset-item
                     id="panneau-glb"
-                    src="{{asset('model/panneau.glb')}}"
+                    src="{{secure_asset('model/panneau.glb')}}"
                 ></a-asset-item>
                 <a-asset-item
                     id="play-glb"
-                    src="{{asset('model/cube.glb')}}"
+                    src="{{secure_asset('model/cube.glb')}}"
                 ></a-asset-item>
                 <a-asset-item
                     id="bamboo-glb"
-                    src="{{asset('model/bamboo/scene.gltf')}}"
+                    src="{{secure_asset('model/bamboo/scene.gltf')}}"
                 ></a-asset-item>
                 <a-asset-item
                     id="fox-glb"
-                    src="{{asset('model/fox1.glb')}}"
+                    src="{{secure_asset('model/fox1.glb')}}"
                 ></a-asset-item>
                 <a-asset-item
                     id="fuji-glb"
-                    src="{{asset('model/fuji.glb')}}"
+                    src="{{secure_asset('model/fuji.glb')}}"
                 ></a-asset-item>
                 <a-asset-item
                     id="cloud1-glb"
-                    src="{{asset('model/cloud_1.glb')}}"
+                    src="{{secure_asset('model/Cloud_1.glb')}}"
                 ></a-asset-item>
                 <a-asset-item
                     id="cloud2-glb"
-                    src="{{asset('model/cloud_2.glb')}}"
+                    src="{{secure_asset('model/Cloud_2.glb')}}"
                 ></a-asset-item>
                 <a-asset-item
                     id="cloud3-glb"
-                    src="{{asset('model/cloud_3.glb')}}"
+                    src="{{secure_asset('model/Cloud_3.glb')}}"
                 ></a-asset-item>
                 <a-asset-item
                     id="cloud4-glb"
-                    src="{{asset('model/cloud_4.glb')}}"
+                    src="{{secure_asset('model/Cloud_4.glb')}}"
                 ></a-asset-item>
                 <img
                     id="play-img"
-                    src="{{asset('img/play.png')}}"
+                    src="{{secure_asset('img/play.png')}}"
                     crossorigin="anonymous"
                 >
             </a-assets>
@@ -130,18 +121,15 @@
                 rotation="0 -130 0"
                 position="50 0 50"
             ></a-sky>
-            {{-- <a-entity
-                svg="src: #text; proportionalScale: 2; extrude: 1; zFactor: 0.001;"
-                position="0 2 -5">
-            </a-entity> --}}
         </a-scene>
-        <button class="exit-button">X</button>
+        {{-- If you add the possibility to add a project --}}
+        {{-- <button class="exit-button">X</button> --}}
     </div>
     
 </body>
-<script src="{{ asset('js/loader.js')}}"></script>
-<script src="{{ asset('js/animation.js')}}"></script>
-<script src="{{ asset('js/environment.js')}}"></script>
-<script src="{{ asset('js/ajax.js')}}"></script>
-<script src="{{ asset('js/route.js')}}"></script>
+<script src="{{ secure_asset('js/loader.js')}}"></script>
+<script src="{{ secure_asset('js/animation.js')}}"></script>
+<script src="{{ secure_asset('js/environment.js')}}"></script>
+<script src="{{ secure_asset('js/ajax.js')}}"></script>
+<script src="{{ secure_asset('js/route.js')}}"></script>
 </html>
